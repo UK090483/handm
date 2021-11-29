@@ -7,13 +7,13 @@ import { Header } from "./Header";
 interface LayoutProps extends FetchStaticPropsResult {}
 
 export const Layout: React.FC<LayoutProps> = ({ children, page }) => {
-  const mainNav = page?.siteSettings.mainNav.map((i) => ({
+  const mainNav = page?.siteSettings?.mainNav.map((i) => ({
     href: i.link.internalLink || i.link.externalLink || "/",
     label: i.label || " ",
     external: !!i.link.externalLink,
   }));
 
-  const extraNav = page?.siteSettings.extraNav.map((i) => ({
+  const extraNav = page?.siteSettings?.extraNav.map((i) => ({
     href: i.link.internalLink || i.link.externalLink || "/",
     label: i.label || " ",
     external: !!i.link.externalLink,
